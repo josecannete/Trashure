@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html>
-<title>
-Trashure - Inicio
-</title>
-<body>
-<img src="logo.png" alt="W3Schools.com" width="1000" height="300">
+<html lang="es-ES">
+<head>
+<title>Trashure - Inicio</title>
+<meta charset="UTF-8">
+</head>
+<body style="background-color:powderblue;">
+<center><img src="logo.png" alt="Trashure!" style="width:1000px;height:300px;"></center>
 <h1></h1>
-<p>Bienvenido a Trashure, la pagina web donde podras encontrar a esa persona que necesita lo que tu ya no quieres.</p>
-<p>Haz login con tu cuenta de Facebook y podras buscar un objeto o realizar una publicacion ofreciendo algo que ya no necesites</p>
+<h1 style="text-align:center;">Bienvenido a Trashure!</h1>
+<p style="text-align:center;">Encuentra a esa persona que necesita lo que tu ya no quieres.</p>
+<p style="text-align:center;">Haz login con tu cuenta de Facebook y podras buscar un objeto o realizar una publicacion ofreciendo algo que ya no necesites</p>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 'your-app-id',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 </body>
 </html>
