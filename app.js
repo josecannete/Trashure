@@ -24,17 +24,7 @@ var pg = require('pg');
 
 var connectionString = "postgres://postgres:postgres@localhost:5432/postgres";
 var pgClient = new pg.Client(connectionString);
-pgClient.connect(connectionString, function(err, client, done){
-    // Handle connection errors
-    if(err) {
-      done();
-      console.log(err);
-      return res.status(500).json({success: false, data: err});
-    }
-    else{
-      console.log("todo salio bien");
-    }
-  });
+pgClient.connect();
 
 /*
 pg.connect(connectionString, function(err, client, done){
