@@ -46,18 +46,19 @@ app.post('/accepted', function (req, res) {
   send_answer(query, res);
 });
 
+app.post('/login', function (req, res) {
+  const user = req.body.user;
+  const pass = req.body.pass;
 
-/*
-const query = pgClient.query("SELECT * FROM submissions WHERE handle = $1 ;", ['Petru'],
-		function(err, result) {
-      console.log(result.rows[0]) // output: brianc
-    });
-
-
-app.get('/query', function (req, res) {
-  	const query = pgClient.query("SELECT * FROM submissions WHERE handle = $1 ;", ['Petru'],
-                function(err, result) {
-      res.send(result.rows[0]) // output: brianc
-    });
+  //const query = pgClient.query("SELECT * FROM submissions WHERE verdict = 'ok' AND contest_id = $1 AND index = $2 ;", [id, indice]);
+  const query = pgClient.query("",[]);
+  send_answer(query, res);
 });
-*/
+
+app.post('/search', function (req, res) {
+  const tag = req.body.tag;
+
+  //const query = pgClient.query("SELECT * FROM submissions WHERE verdict = 'ok' AND contest_id = $1 AND index = $2 ;", [id, indice]);
+  const query = pgClient.query("", []);
+  send_answer(query, res);
+});
