@@ -62,19 +62,3 @@ app.post('/search', function (req, res) {
   const query = pgClient.query("", []);
   send_answer(query, res);
 });
-
-
-/*
-const query = pgClient.query("SELECT * FROM submissions WHERE handle = $1 ;", ['Petru'],
-		function(err, result) {
-      console.log(result.rows[0]) // output: brianc
-    });
-
-
-app.get('/query', function (req, res) {
-  	const query = pgClient.query("SELECT * FROM submissions WHERE handle = $1 ;", ['Petru'],
-                function(err, result) {
-      res.send(result.rows[0]) // output: brianc
-    });
-});
-*/
