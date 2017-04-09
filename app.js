@@ -58,7 +58,7 @@ app.post('/accepted', function (req, res) {
 
   //const query = pgClient.query("SELECT * FROM submissions WHERE verdict = 'ok' AND contest_id = $1 AND index = $2 ;", [id, indice]);
 
-  const query = pgClient.query("SELECT * FROM users;", [user, pass, mail, name]);
+  const query = pgClient.query("INSERT INTO users VALUES ($1, $2, $3, $4);", [user, pass, mail, name]);
   console.log(query);
   send_answer(query, res);
 });
