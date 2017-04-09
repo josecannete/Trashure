@@ -34,6 +34,9 @@ pg.connect(connectionString, function(err, client, done){
       console.log(err);
       return res.status(500).json({success: false, data: err});
     }
+    else{
+      console.log("todo salio bien");
+    }
   });
 
 
