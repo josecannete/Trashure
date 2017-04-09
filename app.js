@@ -42,13 +42,15 @@ pg.connect(connectionString, function(err, client, done){
 
 app.use('/', express.static(__dirname));
 
-console.log(path);
+
 
 app.get('/',function(req,res){
 res.sendFile(path.join(__dirname+'/register.html'));
 });
 
 app.listen(3000);
+
+console.log(path.join(__dirname+'/register.html'));
 
 app.post('/accepted', function (req, res) {
   const name = req.body.name;
