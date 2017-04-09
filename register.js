@@ -11,7 +11,7 @@ function query3(nombre, usuario, email, contrasena){
 }
 
 function query2(usuario, contrasena){
-  $.post('accepted', {user:usuario, pass:contrasena}, null, 'json')
+  $.post('login', {user:usuario, pass:contrasena}, null, 'json')
     .done(function(respuesta) {
       console.log(JSON.stringify(respuesta));
     })
@@ -23,7 +23,7 @@ function query2(usuario, contrasena){
 }
 
 function query1(tags){
-  $.post('accepted', {tag:tags}, null, 'json')
+  $.post('search', {tag:tags}, null, 'json')
     .done(function(respuesta) {
       console.log(JSON.stringify(respuesta));
       //pretty_table(respuesta);
