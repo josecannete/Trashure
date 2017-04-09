@@ -1,7 +1,7 @@
 
 function query3(nombre, usuario, email, contrasena){
-  $.post('accepted', {name:nombre, user:user, mail:mail, pass:contrasena}, null, 'json')
-    .done(function(respuesta) {
+  $.post('accepted', {name:nombre, user:usuario, mail:email, pass:contrasena}, null, 'json')
+    .done(function (respuesta) {
       console.log(JSON.stringify(respuesta));
     })
     .fail(function() {
@@ -10,12 +10,41 @@ function query3(nombre, usuario, email, contrasena){
     return false;
 }
 
-function query2(id, indice){
+function query2(usuario, contrasena){
+  $.post('login', {user:usuario, pass:contrasena}, null, 'json')
+    .done(function(respuesta) {
+      console.log(JSON.stringify(respuesta));
+    })
+    .fail(function() {
+      alert(id);
+      alert("fallo");
+    })
+    return false;
+}
+
+function query1(tags){
+  $.post('search', {tag:tags}, null, 'json')
+    .done(function(respuesta) {
+      console.log(JSON.stringify(respuesta));
+      //pretty_table(respuesta);
+    })
+    .fail(function() {
+      alert("fallo");
+    })
+    return false;
 
 }
 
-function query1(id, indice){
-
+function query4(titulo, descripcion, usuario){
+  $.post('publicacion', {title:titulo, desc:descripcion, user:usuario}, null, 'json')
+    .done(function(respuesta) {
+      console.log(JSON.stringify(respuesta));
+      //pretty_table(respuesta);
+    })
+    .fail(function() {
+      alert("fallo");
+    })
+    return false;
 }
 
 // ################################################

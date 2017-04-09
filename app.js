@@ -22,7 +22,7 @@ var path    = require("path");
 
 var pg = require('pg');
 
-var connectionString = "postgres://postgres:hackaton@localhost/postgres";
+var connectionString = "postgres://postgres:postgres@173.255.116.116:5432/postgres";
 var pgClient = new pg.Client(connectionString);
 pgClient.connect();
 
@@ -42,22 +42,34 @@ app.post('/accepted', function (req, res) {
 
   //const query = pgClient.query("SELECT * FROM submissions WHERE verdict = 'ok' AND contest_id = $1 AND index = $2 ;", [id, indice]);
 
-  const query = pgClient.query("INSERT INTO users ($1, $2, $3, $4)", [user, pass, mail, name]);
+  const query = pgClient.query("SELECT * FROM users", [user, pass, mail, name]);
+  console.log(query);
   send_answer(query, res);
 });
 
+app.post('/login', function (req, res) {
+  const user = req.body.user;
+  const pass = req.body.pass;
 
-/*
-const query = pgClient.query("SELECT * FROM submissions WHERE handle = $1 ;", ['Petru'],
-		function(err, result) {
-      console.log(result.rows[0]) // output: brianc
-    });
-
-
-app.get('/query', function (req, res) {
-  	const query = pgClient.query("SELECT * FROM submissions WHERE handle = $1 ;", ['Petru'],
-                function(err, result) {
-      res.send(result.rows[0]) // output: brianc
-    });
+  //const query = pgClient.query("SELECT * FROM submissions WHERE verdict = 'ok' AND contest_id = $1 AND index = $2 ;", [id, indice]);
+  const query = pgClient.query("",[]);
+  send_answer(query, res);
 });
-*/
+
+app.post('/search', function (req, res) {
+  const tag = req.body.tag;
+
+  //const query = pgClient.query("SELECT * FROM submissions WHERE verdict = 'ok' AND contest_id = $1 AND index = $2 ;", [id, indice]);
+  const query = pgClient.query("", []);
+  send_answer(query, res);
+});
+
+app.post('/publicacion', function (req, res) {
+  const title = req.body.title;
+  const desc = req.body.desc;
+  const user = req.body.user;
+
+  //const query = pgClient.query("SELECT * FROM submissions WHERE verdict = 'ok' AND contest_id = $1 AND index = $2 ;", [id, indice]);
+  const query = pgClient.query("", []);
+  send_answer(query, res);
+});
