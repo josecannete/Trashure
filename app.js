@@ -42,7 +42,7 @@ pg.connect(connectionString, function(err, client, done){
 
 app.use('/', express.static(__dirname));
 
-console.log(__dirname);
+console.log(path);
 
 app.get('/',function(req,res){
 res.sendFile(path.join(__dirname+'/register.html'));
