@@ -43,7 +43,7 @@ pg.connect(connectionString, function(err, client, done){
 app.use('/', express.static(__dirname));
 
 app.get('/',function(req,res){
-res.sendFile(path.join(__dirname+'/dominios.html'));
+res.sendFile(path.join(__dirname+'/index2.html'));
 });
 
 app.listen(3000);
