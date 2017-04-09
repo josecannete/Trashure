@@ -19,7 +19,7 @@ console.log(__dirname);
 
 var pg = require('pg');
 
-var connectionString = "postgres://postgres:hackaton@173.255.116.116:3000/dev";
+var connectionString = "postgres://postgres:hackaton@173.255.116.116:5432/dev";
 var pgClient = new pg.Client(connectionString);
 pgClient.connect();
 
