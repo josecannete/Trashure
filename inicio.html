@@ -3,14 +3,11 @@
 <title>Trashure! - Inicio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="jquery-3.2.0.js"></script>
-<script type="text/javascript" src="register.js"></script>
-
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
+<style>s
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
@@ -43,12 +40,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <header class="w3-container w3-red w3-center" style="padding:128px 16px">
   <div class="Query3">
       <form>
-        <h1>Ingresa tus datos para registrarte</h1><br>
-        <input id="hand3a" type="text" name="" value="Nombre"><br><br>
-        <input id="hand3b" type="text" name="" value="Usuario"><br><br>
-        <input id="hand3c" type="text" name="" value="Contraseña"><br><br>
-        <input id="hand3d" type="text" name="" value="e-mail"><br><br>
-        <button onclick="return query3(hand3a.value, hand3b.value, hand3c.value, hand3d.value)" type="submit" name=""><a href="login.html"> Registrarse </a></button>
+        <h1>¿Qué estas buscando?</h1>
+        <input id="hand3a" type="text" name="" value="Buscar">
+        <button onclick="return queryb(hand3a.value)" type="submit" name=""><a href="busqueda.html"> Buscar </a></button>
+        <h1>¿Quieres publicar?</h1>
+        <button onclick="return queryp(hand3a.value)" type="submit" name=""> <a href="publicar.html">Publicar </a></button>
       </form>
     </div>
 </header>
