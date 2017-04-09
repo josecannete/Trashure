@@ -35,4 +35,16 @@ function query1(tags){
 
 }
 
+function query4(titulo, descripcion, usuario){
+  $.post('publicacion', {title:titulo, desc:descripcion, user:usuario}, null, 'json')
+    .done(function(respuesta) {
+      console.log(JSON.stringify(respuesta));
+      //pretty_table(respuesta);
+    })
+    .fail(function() {
+      alert("fallo");
+    })
+    return false;
+}
+
 // ################################################
