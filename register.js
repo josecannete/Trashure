@@ -1,11 +1,12 @@
 
-function query3(nombre, usuario, email, contrasena){
-  $.post('accepted', {name:nombre, user:usuario, mail:email, pass:contrasena}, null, 'json')
+function query3(name, user, mail, pass){
+  $.post('accepted', {name:name, user:user, mail:mail, pass:pass}, null, 'json')
     .done(function (respuesta) {
       console.log(JSON.stringify(respuesta));
     })
     .fail(function() {
       alert("fallo");
+      //pretty_table(respuesta);
     })
     return false;
 }
