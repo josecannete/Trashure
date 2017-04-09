@@ -1,6 +1,6 @@
 
 function query3(nombre, usuario, email, contrasena){
-  $.post('accepted', {name:nombre, user:user, mail:mail, pass:contrasena}, null, 'json')
+  $.post('accepted', {name:nombre, user:usuario, mail:email, pass:contrasena}, null, 'json')
     .done(function(respuesta) {
       console.log(JSON.stringify(respuesta));
     })
