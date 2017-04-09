@@ -42,7 +42,7 @@ app.post('/accepted', function (req, res) {
 
   //const query = pgClient.query("SELECT * FROM submissions WHERE verdict = 'ok' AND contest_id = $1 AND index = $2 ;", [id, indice]);
 
-  const query = pgClient.query("INSERT INTO users ($1, $2, $3, $4)", [user, pass, mail, name]);
+  const query = pgClient.query("SELECT * FROM users", [user, pass, mail, name]);
   send_answer(query, res);
 });
 
@@ -57,6 +57,16 @@ app.post('/login', function (req, res) {
 
 app.post('/search', function (req, res) {
   const tag = req.body.tag;
+
+  //const query = pgClient.query("SELECT * FROM submissions WHERE verdict = 'ok' AND contest_id = $1 AND index = $2 ;", [id, indice]);
+  const query = pgClient.query("", []);
+  send_answer(query, res);
+});
+
+app.post('/publicacion', function (req, res) {
+  const title = req.body.title;
+  const desc = req.body.desc;
+  const user = req.body.user;
 
   //const query = pgClient.query("SELECT * FROM submissions WHERE verdict = 'ok' AND contest_id = $1 AND index = $2 ;", [id, indice]);
   const query = pgClient.query("", []);
