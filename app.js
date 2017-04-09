@@ -34,6 +34,7 @@ pg.connect(connectionString, function(err, client, done){
       console.log(err);
       return res.status(500).json({success: false, data: err});
     }
+  };
 
 
 app.use('/', express.static(__dirname));
