@@ -24,8 +24,16 @@ var pg = require('pg');
 
 var connectionString = "postgres://postgres:postgres@173.255.116.116:5432/postgres";
 var pgClient = new pg.Client(connectionString);
-if (pgClient.connect() == null)
-  console.log("pase");
+//pgClient.connect();
+
+
+pg.connect(connectionString, function(err, client, done){
+    // Handle connection errors
+    if(err) {
+      done();
+      console.log(err);
+      return res.status(500).json({success: false, data: err});
+    }
 
 
 app.use('/', express.static(__dirname));
